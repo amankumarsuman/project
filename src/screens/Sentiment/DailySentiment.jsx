@@ -237,8 +237,8 @@ const DailySentiment = () => {
               sx={{
                 height: "23.5vh",
                 width: "100%",
-                // border: "2px solid #101F2C",
-                border:"1px solid red",
+                border: "2px solid #101F2C",
+               
                 display: "flex",
                 p: 0.5,
                 overflowX: "scroll",
