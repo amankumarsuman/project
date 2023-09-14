@@ -1,0 +1,251 @@
+@media only screen and (min-width: 600px) {
+  .home-box {
+    padding: 0;
+    max-height: 80vh;
+    width: calc(100% - 30px);
+    margin-left: 30px;
+  }
+}
+.sentiment-paper {
+  background-color: rgb(37, 0, 97, 0.3) !important;
+  border-radius: 10px !important;
+}
+
+.make-table {
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  width: 100%;
+  border: none;
+}
+
+.make-table td,
+#customers th {
+  text-align: center;
+  padding: 0 0;
+}
+
+.make-table td {
+  font-size: 0.8rem;
+}
+
+.table-component {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.make-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.make-table tr th {
+  font-size: 0.73rem;
+  padding: 0;
+  background-color: #141b1e;
+}
+
+/* table component (first table) */
+.table-component {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+.table-component table {
+  height: 100%;
+}
+
+.table-component th,
+.table-component td {
+  max-width: 30px;
+}
+.table-component table tr:first-child {
+  height: 30px;
+}
+
+.table-component table tr {
+  background-color: #0c263f;
+  height: 20px;
+}
+
+.table-component table tr td:first-child {
+  padding-left: 0;
+  max-width: 40px;
+}
+
+.table-component table th {
+  text-align: left;
+  background-color: #2d3d4d;
+}
+
+.table-component table tr:first-child th:first-child {
+  border-radius: 650px 0 0 650px;
+}
+
+.table-component table tr:first-child th:last-child {
+  border-radius: 0 650px 650px 0;
+}
+
+.table-component td:first-child {
+  border-radius: 650px 0 0 650px;
+  background-color: #2d3d4d;
+
+  /* max-width: 50px; */
+}
+.table-component td:nth-child(2) {
+  background-color: #2d3d4d;
+}
+.table-component td:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+/* top table */
+.top-table {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.top-table th {
+  padding: 8px 10px !important;
+}
+
+.top-table td:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.top-table td:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.top-table .table-sentiment-button {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* .top-table th,
+.top-table td {
+  white-space: nowrap;
+  max-width: 100px;
+} */
+
+.top-table::-webkit-scrollbar,
+.circle-grid::-webkit-scrollbar,
+.table-component::-webkit-scrollbar,
+.sentiment-circle::-webkit-scrollbar {
+  height: 2px;
+  background: #f1f1f1;
+  width: 2px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+.top-table::-webkit-scrollbar-thumb,
+.circle-grid::-webkit-scrollbar-thumb,
+.table-component::-webkit-scrollbar-thumb,
+.sentiment-circle::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 50%;
+}
+
+.top-table table thead tr {
+  vertical-align: bottom;
+  height: 20px;
+  background-color: #141b1e;
+}
+
+.top-table table tr {
+  background-color: #2d3d4d;
+  font-size: 16px;
+  height: 20px;
+}
+
+/* pie chart */
+.doughnut-chart {
+  height: 99px;
+  width: 99px;
+}
+.doughnut-chart-top {
+  height: 115px;
+  width: 115px;
+}
+.centerme {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.sentiment-circle {
+  /* overflow-y: hidden; */
+  /* overflow-x: auto; */
+}
+
+/* apex chart daily commulative */
+
+/* apex chart horizontal */
+.apexcharts-yaxis-label,
+.apexcharts-xaxis-label {
+  fill: white;
+}
+
+.apexcharts-legend-text {
+  color: white !important;
+}
+
+/* slider cards */
+.MuiSlider-root {
+  margin-bottom: 0 !important;
+}
+.MuiSlider-valueLabel {
+  top: 5px !important;
+  background-color: transparent !important;
+}
+.MuiSlider-valueLabelLabel {
+  color: black;
+  background-color: transparent !important;
+}
+
+.MuiSlider-valueLabel:before {
+  display: none;
+}
+.slider-cards .MuiSlider-thumb {
+  width: 20px;
+  height: 10px;
+  border-radius: 0;
+  background-color: #006c32;
+}
+
+.brearish-slider-card .MuiSlider-thumb {
+  background-color: #b70606;
+}
+
+.slider-cards .MuiSlider-markLabel {
+  font-size: 0.7rem;
+  top: 70%;
+}
+
+.slider-cards .MuiSlider-rail {
+  background-color: white;
+  height: 8px;
+  border-radius: 0;
+}
+
+.slider-cards .MuiSlider-track {
+  display: none;
+}
+
+.table-data-box {
+  background-color: #ee0303;
+  width: "60px";
+  height: "30px";
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.5rem;
+}
+/* doughnut chart */
+.doughnut-chart-sp500 {
+  width: 80px;
+  height: 80px;
+}
+
+#sp-table td {
+  padding: 0 10px !important;
+}

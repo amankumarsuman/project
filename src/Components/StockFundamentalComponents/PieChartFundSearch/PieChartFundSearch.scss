@@ -1,0 +1,20 @@
+@import "../../../scss/variables.scss";
+
+.pieChartFundContainer {
+  .header {
+    margin-left: 8px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .pieChartFundCard {
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+    border: 1px solid #775f50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28vh;
+  }
+}

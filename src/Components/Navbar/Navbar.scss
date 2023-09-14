@@ -1,0 +1,44 @@
+@import "../../scss/_variables.scss";
+
+.navbarSection {
+  .navbar {
+    background-color: #001219;
+    position: fixed;
+  }
+
+  & .drawerIcon {
+    color: #d9d9d9;
+  }
+
+  & .drawerText {
+    color: #00f6ff;
+  }
+
+  & a.active {
+    color: #001219 !important;
+    // background-color: #00f6ff;
+    background: linear-gradient(
+      93.33deg,
+      #00f6ff 6.36%,
+      rgba(0, 246, 255, 0) 144.03%
+    );
+    border-radius: 5px;
+    text-transform: uppercase;
+
+    span {
+      font-weight: bolder;
+    }
+
+    .drawerIcon {
+      color: #001219 !important;
+    }
+  }
+}
+
+// @media screen and (max-width: 720px) {
+//   .navbarSection {
+//     .navbar {
+//       // position: static;
+//     }
+//   }
+// }

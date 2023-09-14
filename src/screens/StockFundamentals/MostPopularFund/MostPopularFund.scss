@@ -1,0 +1,64 @@
+@import "../../../scss/variables.scss";
+
+// Main Header
+
+.mostPopularFundsHeader {
+  .header {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .tableContainer {
+    .tableBody {
+      background-color: #0d1934 !important;
+      border: none;
+      border: 2px solid #775f50;
+      border-radius: 14px !important;
+      padding: 0 20px;
+
+      & th {
+        color: #595f6d;
+        background-color: #0d1934 !important;
+        text-transform: uppercase;
+        font-weight: bolder;
+        border: none;
+      }
+
+      & tr {
+        border-radius: 10px !important;
+      }
+
+      & td {
+        color: white;
+        border: none;
+        background-color: #263047;
+      }
+
+      .mostPopularFundPagination {
+        color: white !important;
+
+        & .MuiSelect-icon {
+          color: white !important;
+        }
+
+        & .Mui-disabled {
+          color: #7a7878 !important;
+        }
+      }
+    }
+
+    .MuiTable-root {
+      border-collapse: separate;
+      border-spacing: 0 10px;
+      border: transparent;
+      border-radius: 10px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .mostPopularFundsHeader {
+    margin-top: 10px;
+  }
+}

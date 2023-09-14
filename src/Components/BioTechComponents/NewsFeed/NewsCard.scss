@@ -1,0 +1,38 @@
+.newsCardContainer {
+  // min-height: 236px;
+  background-color: #797e891f;
+  border-radius: 5px;
+  width: 21vw;
+  border: 1px solid rgba(214, 214, 214, 0.12);
+  padding: 10px;
+  max-height: 29vh;
+  height: 29vh;
+
+  .imgTitle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .title {
+      margin-left: 5px;
+      .header {
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+      }
+      .date {
+        font-size: 12px;
+        color: #87898e;
+      }
+    }
+  }
+
+  .descriptionWraper {
+    overflow-y: auto;
+    max-height: 24vh;
+    height: 24vh;
+    .description {
+      color: #87898e;
+    }
+  }
+}

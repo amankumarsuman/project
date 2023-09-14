@@ -1,0 +1,25 @@
+/* CircularPercentageChart.css */
+.chart-container {
+    position: relative;
+}
+
+.chart {
+    width: 200px; /* Set your desired width */
+    height: 200px; /* Set your desired height */
+}
+
+.chart-circle {
+    transition: stroke-dashoffset 0.3s;
+}
+
+.chart-circle:hover {
+    stroke-dashoffset: 0;
+}
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}

@@ -1,0 +1,62 @@
+@import "../../../scss/variables.scss";
+
+.tableContainer {
+  .header {
+    margin-left: 8px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .tableBody {
+    background-color: #0d1934 !important;
+    border: none;
+    border: 1px solid #775f50;
+    border-radius: 14px !important;
+    padding: 0 20px;
+
+    & th {
+      color: #595f6d;
+      background-color: #0d1934 !important;
+      text-transform: uppercase;
+      font-weight: bolder;
+      border: none;
+    }
+
+    & tr {
+      border-radius: 10px !important;
+    }
+
+    & td {
+      color: white;
+      border: none;
+      background-color: #263047;
+    }
+
+    .mostPopularFundPagination {
+      color: white !important;
+
+      & .MuiSelect-icon {
+        color: white !important;
+      }
+
+      & .Mui-disabled {
+        color: #7a7878 !important;
+      }
+    }
+  }
+
+  .MuiTable-root {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    border: transparent;
+    border-radius: 10px !important;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .tableContainer {
+    .tableBody {
+      width: 40%;
+    }
+  }
+}

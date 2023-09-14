@@ -1,0 +1,85 @@
+.topTen_wrapper {
+    padding: 0 24px 12px;
+
+    .wrapper_component {
+        padding: 0 0 70px 0;
+        margin: 40px 0 0 0;
+    }
+
+    .tabs_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        overflow: auto;
+        gap: 10px;
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            width: 6px;
+            background: #000;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background: #888;
+        }
+        // margin: 40px 0;
+        .tabsmine {
+            // width: calc(100%/3 - 50px);
+            min-width: 180px;
+            padding: 20px;
+            border: 1px solid rgb(3, 19, 91);
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            &:hover {
+                background: #000030;
+            }
+            p,
+            h6,
+            small {
+                margin: 0;
+                color: #fff;
+            }
+            .image_wrap {
+                height: 38px;
+                width: 38px;
+            }
+            .tab_card_body {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .left_wrap {
+                p {
+                    width: 42px;
+                    max-width: 42px;
+                }
+            }
+        }
+        .tabs {
+            padding: 0 50px;
+            min-height: 30px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            color: #ffffff;
+            cursor: pointer;
+
+            &:hover {
+                background: linear-gradient(194deg, #851083 0%, #231471 100%);
+                color: #ffffff;
+            }
+        }
+        .active_tabs {
+            background: linear-gradient(194deg, #851083 0%, #231471 100%);
+            color: #ffffff;
+        }
+    }
+}
