@@ -114,7 +114,7 @@ function DailyComu({ sentimentData }) {
           options={options}
           series={series}
           type="bar"
-          height={360}
+          height={330}
         />
       </Box>
     </>
