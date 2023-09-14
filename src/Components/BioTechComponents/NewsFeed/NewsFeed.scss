@@ -1,0 +1,12 @@
+.newsFeedComponent {
+  overflow: hidden;
+  max-width: 50vw;
+
+  .newsFeedContainer {
+    display: flex;
+
+    .newsFeedItem {
+      margin-right: 10px;
+    }
+  }
+}

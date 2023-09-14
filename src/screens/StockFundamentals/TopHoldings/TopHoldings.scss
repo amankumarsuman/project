@@ -1,0 +1,55 @@
+@import "../../../scss/variables.scss";
+
+// Main Header
+
+.topHoldingHeader {
+  & .header {
+    margin-left: 8px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  & .tabList {
+    margin-top: 10px;
+  }
+}
+
+// Invertor Tables
+
+.investorTablesSection {
+  .investorTableContainer {
+    .tableWraper {
+      border: 1px solid #775f50;
+      border-radius: 14px !important;
+    }
+  }
+
+  .investorHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 0 15px;
+    font-size: 16px;
+  }
+}
+
+// Tab pages
+.tabPages {
+  display: flex;
+  justify-content: center;
+
+  & .tabLabel {
+    color: white;
+    // font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .topHoldingHeader {
+    margin-top: 10px;
+
+    & p {
+      margin-top: 0px;
+    }
+  }
+}

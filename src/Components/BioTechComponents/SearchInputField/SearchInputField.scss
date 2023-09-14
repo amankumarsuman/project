@@ -1,0 +1,28 @@
+.seachInputFieldWraper {
+  display: flex;
+  justify-content: flex-start;
+
+  .inputField {
+    background: linear-gradient(
+      0deg,
+      rgba(121, 126, 137, 0.12),
+      rgba(121, 126, 137, 0.12)
+    );
+    color: white !important;
+    border-color: #d6d6d61f;
+    height: 44px;
+  }
+
+  .MuiAutocomplete-popupIndicator {
+    color: white;
+  }
+
+  .searchBtn {
+    background: linear-gradient(90deg, #00f6ff 0%, #79ffdb 100%);
+
+    .searchIcon {
+      color: #181a1b;
+      transform: scale(1.4);
+    }
+  }
+}

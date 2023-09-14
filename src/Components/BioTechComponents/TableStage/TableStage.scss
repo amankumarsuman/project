@@ -1,0 +1,14 @@
+.tableStageContainer {
+  .stageWraper {
+    display: flex;
+    justify-content: flex-start;
+
+    .box {
+      border-radius: 2px;
+      margin-right: 1px;
+      width: 22px;
+      height: 14px;
+      background-color: #929eae;
+    }
+  }
+}

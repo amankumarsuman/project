@@ -1,0 +1,56 @@
+.gainerLoserTableContainer {
+  border: none;
+  padding: 0 20px;
+  border-radius: 10px !important;
+  height: 37vh;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #d6d6d61f;
+  background: linear-gradient(
+    0deg,
+    rgba(121, 126, 137, 0.12),
+    rgba(121, 126, 137, 0.12)
+  ) !important;
+
+  & .header {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+  }
+  .gainerLoserTableBody {
+    margin-top: 15px;
+
+    & .secondValue {
+      display: block;
+      font-size: 10px;
+      & .green{
+      color: #48d35e;
+      }
+      & .red{
+      color: #f16969;
+      }
+    }
+  }
+
+  & th {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    background: linear-gradient(
+      0deg,
+      rgba(121, 126, 137, 0.12),
+      rgba(121, 126, 137, 0.12)
+    ) !important;
+    border: none;
+  }
+
+  & tr {
+    border-radius: 5px !important;
+  }
+
+  & td {
+    color: white;
+    border: none;
+  }
+}

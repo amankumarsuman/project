@@ -1,0 +1,296 @@
+.bioTechPage {
+  height: 100vh;
+  overflow: auto;
+  background: #161b21 !important;
+  width: 100%;
+}
+
+.bioTechMainHeader {
+  & .header {
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 5px;
+  }
+
+  & .bioTechTabPages {
+    display: flex;
+    justify-content: center;
+
+    & .tabLabel {
+      color: white;
+      margin-right: 30px;
+    }
+  }
+}
+
+.bioTechBarGraphs {
+  .calenderEvents {
+    border-radius: 10px;
+    height: 37vh;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #d6d6d61f;
+    background: linear-gradient(
+      0deg,
+      rgba(121, 126, 137, 0.12),
+      rgba(121, 126, 137, 0.12)
+    );
+
+    .header {
+      margin-left: 10px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+}
+
+.bioTechHeatMap {
+  margin-top: 10px;
+
+  .newsFeedBox {
+    background-color: #797e891f;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(214, 214, 214, 0.12);
+    height: 37vh;
+
+    .headerSpan {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+.searchBarSection {
+  margin-bottom: 3px;
+  .companyLogoWraper {
+    border: 1px solid #f22323;
+    width: 215px;
+    padding: 6px;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .companyDetails {
+      margin-left: 20px;
+      .shortName {
+        display: block;
+        font-size: 16px;
+        font-weight: bolder;
+        color: #f22323;
+      }
+
+      .fullName {
+        color: #f22323;
+        font-size: 14px;
+      }
+    }
+
+    .companyValue {
+      .amount1 {
+        margin-left: 20px;
+        display: block;
+        font-size: 16px;
+        font-weight: bolder;
+      }
+
+      .amount2 {
+        margin-left: 12px;
+        color: #f22323;
+        font-size: 14px;
+
+        .icon {
+          position: relative;
+          top: 6px;
+        }
+      }
+    }
+  }
+}
+
+.graphAndTableBioTechSection {
+  .newsFeedBox {
+    background-color: #797e891f;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(214, 214, 214, 0.12);
+    height: 36.5vh;
+
+    .headerSpan {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .newsFeedContainer {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.seachTableSection {
+  height: 79vh;
+}
+
+.gainerLoserTableSection {
+  margin-top: 10px;
+
+  .newsFeedBox {
+    background-color: #797e891f;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(214, 214, 214, 0.12);
+
+    .headerSpan {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+.treeMapGainerLosesSection {
+  margin-top: 10px;
+
+  .bioTechTableContainer {
+    border: none;
+    padding: 0 20px;
+    border-radius: 10px;
+    height: 35vh;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #d6d6d61f;
+    background: linear-gradient(
+      0deg,
+      rgba(121, 126, 137, 0.12),
+      rgba(121, 126, 137, 0.12)
+    );
+
+    .header {
+      margin-left: 10px;
+      font-weight: 700;
+      font-size: 20px;
+      color: white;
+    }
+
+    & th {
+      color: white;
+      text-transform: uppercase;
+      font-weight: bolder;
+      background: linear-gradient(
+        0deg,
+        rgba(121, 126, 137, 0.12),
+        rgba(121, 126, 137, 0.12)
+      ) !important;
+      border: none;
+    }
+
+    & tr {
+      border-radius: 5px !important;
+    }
+
+    & td {
+      color: white;
+      border: none;
+    }
+  }
+  .calenderEvents {
+    border-radius: 10px;
+    height: 30vh;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #d6d6d61f;
+    background: linear-gradient(
+      0deg,
+      rgba(121, 126, 137, 0.12),
+      rgba(121, 126, 137, 0.12)
+    );
+
+    .header {
+      margin-left: 10px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+
+  .bioTechSmallSearchTableContainer {
+    height: 35vh;
+    border: none;
+    padding: 0 20px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #d6d6d61f;
+    background: linear-gradient(
+      0deg,
+      rgba(121, 126, 137, 0.12),
+      rgba(121, 126, 137, 0.12)
+    ) !important;
+
+    .header {
+      margin-left: 10px;
+      font-weight: 700;
+      font-size: 20px;
+      color: white;
+    }
+
+    & th {
+      color: white;
+      text-transform: uppercase;
+      font-weight: bolder;
+      background: linear-gradient(
+        0deg,
+        rgba(121, 126, 137, 0.12),
+        rgba(121, 126, 137, 0.12)
+      ) !important;
+      border: none;
+    }
+
+    & tr {
+      border-radius: 5px !important;
+    }
+
+    & td {
+      color: white;
+      border: none;
+    }
+
+    & .stageHeader {
+      margin-left: 28px;
+    }
+
+    & .stageHeaderWraper {
+      .stageHead {
+        margin-right: 9px;
+      }
+      .one {
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+.calenderSection {
+  .eventList {
+    .header {
+      font-weight: 700;
+    }
+
+    background-color: #797e891f;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(214, 214, 214, 0.12);
+
+    height: 75vh;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .bioTechMainHeader {
+    width: 50%;
+
+    & .para {
+      margin-top: 0px;
+    }
+  }
+}

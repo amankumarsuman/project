@@ -1,0 +1,76 @@
+@import "../../../scss/variables.scss";
+
+.fundSearchHeader {
+  & .header {
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+// Tree and Pie chart section
+
+.treeMapSection {
+  margin-top: 10px;
+}
+
+// Top Holding table
+
+.topHoldingSection {
+  .header {
+    margin-left: 8px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .topHoldingTable {
+    .topHoldingTableContainer {
+      background-color: #0d1934 !important;
+      border: none;
+      border: 1px solid #775f50;
+      border-radius: 14px !important;
+      padding: 0 20px;
+
+      height: 64vh;
+
+      .mostPopularFundPagination {
+        color: white !important;
+
+        & .MuiSelect-icon {
+          color: white !important;
+        }
+
+        & .Mui-disabled {
+          color: #7a7878 !important;
+        }
+      }
+    }
+  }
+}
+
+// Increase Decrease table
+
+.increaseDecreaseTable {
+  & .header {
+    margin-left: 8px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+// Fund tab pages
+// Tab pages
+.fundTabPages {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+
+  & .tabLabel {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .fundSearchHeader {
+    margin-top: 10px;
+  }
+}

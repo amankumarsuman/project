@@ -1,0 +1,42 @@
+name: frontend-prod
+
+on:
+    push:
+        branches: [ main ]
+
+jobs:
+    build-prod:
+        runs-on:
+            labels: ubuntu-latest
+        steps:
+            -   name: Repository checkout
+                uses: actions/checkout@v2
+            
+            -   name: Docker install
+                uses: justinyoo/github-actions-docker-sample@v1.0.0
+            
+            -   name: install Doctl
+                run:    |
+                    sudo apt update
+                    sudo snap install doctl
+                    doctl auth init --access-token dop_v1_002374f64e38f5478910e560b3cfb10dbc2bd144c59a7cc1d98b6ecccb45fbd9
+                    sudo usermod -aG docker $USER && newgrp docker
+                    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+                    curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+                    echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+                    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+                    mkdir -p $HOME/.kube
+                    sudo snap connect doctl:kube-config
+                    kubectl version --client
+                    doctl kubernetes cluster kubeconfig save 0f3b5460-4a1a-4bc8-b4cb-7de925acc9a1
+                    kubectl get pods -n stockworld
+                    docker login registry.digitalocean.com --username dop_v1_002374f64e38f5478910e560b3cfb10dbc2bd144c59a7cc1d98b6ecccb45fbd9 --password dop_v1_002374f64e38f5478910e560b3cfb10dbc2bd144c59a7cc1d98b6ecccb45fbd9
+                    docker build -t frontend .
+                    docker tag frontend registry.digitalocean.com/stockworld-registry/stockworld-frontend:latest
+                    docker push registry.digitalocean.com/stockworld-registry/stockworld-frontend:latest
+                    cd stockworld-frontend
+                    kubectl delete -f deployment.yml -n stockworld
+                    kubectl apply -f deployment.yml -n stockworld
+                    
+            -   name: Pipeline complete
+                run: echo "complete deployment"
