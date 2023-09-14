@@ -32,7 +32,32 @@ function AiPrediction(props) {
   const [dataList, setDataList] = useState({});
   const [dataListtwo, setDataListtwo] = useState({});
   const [dataListthree, setDataListthree] = useState({});
+  const [price, setPrice] = useState([]);
 
+
+  // https://financialmodelingprep.com/api/v3/quote/AAPL,AMZN,META,NVDA,GOOGL,TSLA,TWTR?apikey=ff170cfbc214454f0a10844eb6e9606e
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://financialmodelingprep.com/api/v3/quote/AAPL,AMZN,META,NVDA,GOOGL,TSLA,TWTR?apikey=ff170cfbc214454f0a10844eb6e9606e",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        console.log("res", res?.data);
+        setPrice(res?.data);
+      })
+      .catch((error) => {
+        console.log("error_", error);
+      });
+   
+      
+      
+  }, []);
   useEffect(() => {
     axios
       .get(
@@ -168,6 +193,8 @@ function AiPrediction(props) {
                   <br />
                   <ReactDatatableComponent noheader={true} /> */}
                     <TableGridHeader />
+
+                    
                     <TableGridOne
                       dataList={dataList}
                       list={"TSLA"}
