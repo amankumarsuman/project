@@ -1,5 +1,5 @@
 import * as React from "react";
-import {styled, useTheme, alpha} from "@mui/material/styles";
+import { styled, useTheme, alpha } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
@@ -37,12 +37,13 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import "./Navbar.scss";
 import appleLogo from "../../assets/images/appleLogo.png";
 import DrawerHeader from "../DrawerHeader/DrawerHeader";
-import {NavLink} from "react-router-dom";
-import {Insights, CalendarMonthOutlined} from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
+import { Insights, CalendarMonthOutlined } from "@mui/icons-material";
+import { Tooltip } from "@mui/material";
 
 const drawerWidth = 260;
 
-const Search = styled("div")(({theme}) => ({
+const Search = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -58,7 +59,7 @@ const Search = styled("div")(({theme}) => ({
     },
 }));
 
-const SearchIconWrapper = styled("div")(({theme}) => ({
+const SearchIconWrapper = styled("div")(({ theme }) => ({
     padding: theme.spacing(0, 2),
     height: "100%",
     position: "absolute",
@@ -68,7 +69,7 @@ const SearchIconWrapper = styled("div")(({theme}) => ({
     justifyContent: "center",
 }));
 
-const StyledInputBase = styled(InputBase)(({theme}) => ({
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: "inherit",
     "& .MuiInputBase-input": {
         padding: theme.spacing(1, 1, 1, 0),
@@ -105,7 +106,7 @@ const closedMixin = (theme) => ({
 
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== "open",
-})(({theme, open}) => ({
+})(({ theme, open }) => ({
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(["width", "margin"], {
         easing: theme.transitions.easing.sharp,
@@ -123,7 +124,7 @@ const AppBar = styled(MuiAppBar, {
 
 const Drawer = styled(MuiDrawer, {
     shouldForwardProp: (prop) => prop !== "open",
-})(({theme, open}) => ({
+})(({ theme, open }) => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: "nowrap",
@@ -220,7 +221,7 @@ const Navbar = () => {
                     color="inherit"
                 >
                     <Badge badgeContent={17} color="error">
-                        <NotificationsIcon/>
+                        <NotificationsIcon />
                     </Badge>
                 </IconButton>
                 <p>Notifications</p>
@@ -233,7 +234,7 @@ const Navbar = () => {
                     aria-haspopup="true"
                     color="inherit"
                 >
-                    <AccountCircle/>
+                    <AccountCircle />
                 </IconButton>
                 <p>Profile</p>
             </MenuItem>
@@ -242,7 +243,7 @@ const Navbar = () => {
 
     return (
         <div className="navbarSection">
-            <CssBaseline/>
+            <CssBaseline />
             <AppBar position="fixed" open={open} className="navbar">
                 <Toolbar>
                     <IconButton
@@ -253,31 +254,31 @@ const Navbar = () => {
                         onClick={handleDrawerOpen}
                         sx={{
                             marginRight: 5,
-                            ...(open && {display: "none"}),
+                            ...(open && { display: "none" }),
                         }}
                     >
-                        <MenuIcon/>
+                        <MenuIcon />
                     </IconButton>
 
-                    <img src={appleLogo} alt="Apple Logo" width="45px"/>
+                    <img src={appleLogo} alt="Apple Logo" width="45px" />
                     <Search>
                         <SearchIconWrapper>
-                            <SearchIcon/>
+                            <SearchIcon />
                         </SearchIconWrapper>
                         <StyledInputBase
                             placeholder="Search…"
-                            inputProps={{"aria-label": "search"}}
+                            inputProps={{ "aria-label": "search" }}
                         />
                     </Search>
-                    <Box sx={{flexGrow: 1}}/>
-                    <Box sx={{display: {xs: "none", md: "flex"}}}>
+                    <Box sx={{ flexGrow: 1 }} />
+                    <Box sx={{ display: { xs: "none", md: "flex" } }}>
                         <IconButton
                             size="large"
                             aria-label="show 17 new notifications"
                             color="inherit"
                         >
                             <Badge badgeContent={17} color="error">
-                                <NotificationsIcon/>
+                                <NotificationsIcon />
                             </Badge>
                         </IconButton>
                         <IconButton
@@ -289,10 +290,10 @@ const Navbar = () => {
                             onClick={handleProfileMenuOpen}
                             color="inherit"
                         >
-                            <AccountCircle/>
+                            <AccountCircle />
                         </IconButton>
                     </Box>
-                    <Box sx={{display: {xs: "flex", md: "none"}}}>
+                    <Box sx={{ display: { xs: "flex", md: "none" } }}>
                         <IconButton
                             size="large"
                             aria-label="show more"
@@ -301,7 +302,7 @@ const Navbar = () => {
                             onClick={handleMobileMenuOpen}
                             color="inherit"
                         >
-                            <MoreIcon/>
+                            <MoreIcon />
                         </IconButton>
                     </Box>
                 </Toolbar>
@@ -322,16 +323,18 @@ const Navbar = () => {
                 <DrawerHeader>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === "rtl" ? (
-                            <ChevronRightIcon className="drawerIcon"/>
+                            <ChevronRightIcon className="drawerIcon" />
                         ) : (
-                            <ChevronLeftIcon className="drawerIcon"/>
+                            <ChevronLeftIcon className="drawerIcon" />
                         )}
                     </IconButton>
                 </DrawerHeader>
-                <Divider sx={{bgcolor: "#fff"}}/>
+                <Divider sx={{ bgcolor: "#fff" }} />
 
                 <List>
-                    <ListItem disablePadding sx={{display: "block"}}>
+
+                    <ListItem disablePadding sx={{ display: "block" }}>
+
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -342,23 +345,26 @@ const Navbar = () => {
                             to="/marketMaster"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <SpaceDashboardIcon className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="Market Master" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <SpaceDashboardIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Market Master View"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -369,23 +375,26 @@ const Navbar = () => {
                             to="/dailytrade"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <CandlestickChartIcon className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="Daily Trade" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <CandlestickChartIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Daily Trade View"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -396,23 +405,26 @@ const Navbar = () => {
                             to="/macroView"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <EmojiEmotionsIcon className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="Macro View" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <EmojiEmotionsIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Macro View"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -423,23 +435,26 @@ const Navbar = () => {
                             to="/technicalanalysis"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <EmojiEmotionsIcon className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="Technical Analysis" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <EmojiEmotionsIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Technical Analysis"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -450,23 +465,26 @@ const Navbar = () => {
                             to="/"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <QuestionAnswerIcon className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="Stock Fundamental" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <QuestionAnswerIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Stock Fundamentals"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -477,23 +495,26 @@ const Navbar = () => {
                             to="/bioTech"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <HourglassEmptyIcon className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="Bio Tech" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <HourglassEmptyIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Bio Tech Corner"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -504,23 +525,26 @@ const Navbar = () => {
                             to="/sentimentAnalysis"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <EmojiEmotionsIcon className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="Sentiment Analysis" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <EmojiEmotionsIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Sentiment Analysis"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -531,23 +555,26 @@ const Navbar = () => {
                             to="/aiPrediction"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <AcUnitIcon className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="AI Prediction" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <AcUnitIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"AI Prediction"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -558,23 +585,26 @@ const Navbar = () => {
                             to="/aiDocInsights"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <Insights className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="AI Doc Insights" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <Insights className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"AI Document Insights"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -585,23 +615,26 @@ const Navbar = () => {
                             to="/marketBroadView"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <AssignmentIcon className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="Market Broad View" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <AssignmentIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Market Broadview"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -612,23 +645,26 @@ const Navbar = () => {
                             to="/options"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <CreateNewFolderIcon className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="Options" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <CreateNewFolderIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Options"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -639,23 +675,26 @@ const Navbar = () => {
                             to="/academy"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <AutoStoriesIcon className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="Academy" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <AutoStoriesIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Academy"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -666,23 +705,27 @@ const Navbar = () => {
                             to="/pharmbizzNews"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <ReceiptLongIcon className="drawerIcon"/>
-                            </ListItemIcon>
+
+                            <Tooltip title="Pharmbizz News" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <ReceiptLongIcon className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Pharmbizz News"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding sx={{display: "block"}}>
+                    <ListItem disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
@@ -693,18 +736,21 @@ const Navbar = () => {
                             to="/calendars"
                             className="drawerText"
                         >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <CalendarMonthOutlined className="drawerIcon"/>
-                            </ListItemIcon>
+                            <Tooltip title="Calendars" placement="right-start">
+
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : "auto",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <CalendarMonthOutlined className="drawerIcon" />
+                                </ListItemIcon>
+                            </Tooltip>
                             <ListItemText
                                 primary={"Calendars"}
-                                sx={{opacity: open ? 1 : 0}}
+                                sx={{ opacity: open ? 1 : 0 }}
                             />
                         </ListItemButton>
                     </ListItem>
